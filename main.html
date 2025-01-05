@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <title>Resume Builder</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="cv-builder">
+      <div class="form-section">
+        <h2>Personal Information</h2>
+        <label for="name" class="name">Name:</label>
+        <input type="text" id="name" placeholder="Enter your full name" />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Enter your email address" />
+
+        <label for="phone">Phone:</label>
+        <input type="number" id="phone" placeholder="Enter your phone number" />
+
+        <label for="linkedin">LinkedIn:</label>
+        <input
+          type="url"
+          id="linkedin"
+          placeholder="https://www.linkedin.com/in/your-profile"
+        />
+
+        <div class="container">
+          <div class="img-area">
+            <label for="profile-pic"></label>
+            <input type="file" id="profile-pic" accept="image/*" hidden />
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+            <h3>Upload Image</h3>
+            <p>Image size must be less than <span>2MB</span></p>
+
+            <div class="preview-area" style="display: none">
+              <img id="image-preview" src="#" alt="Image Preview" />
+            </div>
+          </div>
+
+          <ol class="list">
+            <li>With white or blue background</li>
+            <li>File size must be less than 2MB</li>
+            <li>File type: jpg, jpeg, png</li>
+            <li>Upload your recent passport size picture</li>
+            <li>Your face should be clearly visible, no side pose</li>
+          </ol>
+        </div>
+
+        <button
+          class="select-image"
+          type="button"
+          onclick="document.getElementById('profile-pic').click()"
+        >
+          Select Image
+        </button>
+        <b></b>
+
+        <div>
+          <label for="title">Title:</label>
+          <input
+            type="text"
+            id="title"
+            name="title"
+            placeholder="Enter your professional title"
+            required
+          />
+        </div>
+        <br />
+
+        <div>
+          <label for="description">Description:</label>
+          <textarea
+            id="description"
+            name="description"
+            placeholder="Provide a brief description about yourself"
+            required
+          ></textarea>
+        </div>
+        <br />
+
+        <div id="preview-section">
+          <h2 id="generated-title"></h2>
+          <p id="generated-description"></p>
+        </div>
+
+        <div class="work-experience-section">
+          <h2 class="title-heading">Work Experience</h2>
+          <div id="work-experience"></div>
+          <button onclick="addWorkExperience()">Add Work Experience</button>
+
+          <h2 class="title-heading">Education</h2>
+          <div id="education"></div>
+          <button onclick="addEducation()">Add Education</button>
+
+          <h2 class="title-heading">Languages</h2>
+          <div id="languages"></div>
+          <button type="button" onclick="addLanguage()">Add Language</button>
+
+          <h2 class="title-heading">Skills</h2>
+          <div id="skills"></div>
+          <button onclick="addSkill()">Add Skill</button>
+        </div>
+        <br />
+
+        <button class="generate-cv-btn" onclick="generateCV()">Generate CV</button>
+      </div>
+
+      <div class="cv-preview">
+        <h2>CV Preview</h2>
+        <div id="cv-output"></div>
+      </div>
+    </div>
+
+
+
+   <script src="app.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
